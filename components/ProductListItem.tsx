@@ -9,20 +9,21 @@ import { Button, ButtonText } from "@/components/ui/button";
 
 export default function ProductListItem({ product }) {
   return (
-    <Card className="p-5 rounded-lg max-w-[360px] m-3">
+    <Card className="p-5 rounded-lg max-w-[360px] flex-1">
       <Image
         source={{
-          uri: "https://gluestack.github.io/public-blog-video-assets/saree.png",
+          uri: product.image,
         }}
         className="mb-6 h-[240px] w-full rounded-md aspect-[4/3]"
-        alt="image"
+        alt={`${product.name}`}
+        resizeMode="contain"
       />
       <Text className="text-sm font-normal mb-2 text-typography-700">
-        Fashion Clothing
+        ${product.price}
       </Text>
       <VStack className="mb-6">
         <Heading size="md" className="mb-4">
-          Cotton Kurta
+          {product.description}
         </Heading>
         <Text size="sm">
           Floral embroidered notch neck thread work cotton kurta in white and
